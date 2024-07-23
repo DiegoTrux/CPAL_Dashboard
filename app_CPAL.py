@@ -18,6 +18,7 @@ df_modelo.loc[:, df_modelo.select_dtypes(include=['object']).columns] = df_model
 
 # Crear la aplicación Dash
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
+server = app.server
 
 # Valores aleatorios para las tarjetas
 cantidad_estudiantes = len(df_data_cruda['ALUMNOID'].unique())
@@ -173,6 +174,4 @@ def render_predictivo_content(tab):
         return dcc.Graph(id='confusion-graph', figure=plots_CPAL.create_scatter_plot_study_period(df_modelo))
 
 if __name__ == '__main__':
-    app.run_server(debug=True, 
-                   host='127.0.0.1', 
-                   port=8050)
+    app.run_server(debug=False)
