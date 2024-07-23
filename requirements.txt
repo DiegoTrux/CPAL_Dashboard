@@ -4,3 +4,4 @@ plotly
 scikit-learn
 networkx
 gunicorn
+openpyxl
