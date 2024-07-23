@@ -27,7 +27,7 @@ promedio_cursos_llevados = math.ceil(df_data_cruda['APPROVED_COURSES'].mean())
 promedio_experiencia_laboral = math.ceil(df_modelo.loc[df_modelo['EXP_PROFESIONAL'] != 0, 'EXP_PROFESIONAL'].mean())
 
 # Leer datos desde un archivo Excel
-df = pd.read_excel('ruta_al_archivo.xlsx')  # Reemplaza 'ruta_al_archivo.xlsx' con la ruta correcta
+# df = pd.read_excel('ruta_al_archivo.xlsx')  # Reemplaza 'ruta_al_archivo.xlsx' con la ruta correcta
 
 # Crear algunas figuras de ejemplo
 def scatter_plot():
