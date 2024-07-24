@@ -97,7 +97,9 @@ def crear_grafico_dirigido(df):
 
     fig = go.Figure(data=[edge_trace, node_trace],
                     layout=go.Layout(
-                        title='<br>Resumen Estadístico de Población de Alumnos',
+                        title='<br>Resumen Estadístico de Alumnos',
+                        height=600,
+                        width=1400,
                         titlefont_size=16,
                         showlegend=False,
                         hovermode='closest',
@@ -233,7 +235,9 @@ def crear(df):
 
     fig = go.Figure(data=[edge_trace, node_trace],
                     layout=go.Layout(
-                        title='<br>Resumen Estadístico de Población de Alumnos',
+                        title='<br>Resumen Estadístico de Matriculas',
+                        height=600,
+                        width=1400,
                         titlefont_size=16,
                         showlegend=False,
                         hovermode='closest',
@@ -329,10 +333,12 @@ def crear_violin_plot(df):
         )
     ]
 
-    fig.update_layout(title='Violin Plot de Edades con Cuartiles y LCL/UCL',
-                      xaxis_title='Edades',
-                      yaxis_title='Densidad',
+    fig.update_layout(title='Distribucion de Edades',
+                      #xaxis_title='Edades',
+                      #yaxis_title='Densidad',
                       violinmode='overlay',
+                      height=600,
+                      width=1400,
                       legend=dict(
                           yanchor="top",
                           y=0.99,
@@ -421,7 +427,7 @@ def crear_grafico_cascada(df):
     # Configurar diseño del gráfico
     fig.update_layout(
         title={
-            'text': "Distribución de Combinaciones de Variables Financieras<br>['FINAN_RECPROPIOS', 'FINAN_APOYOFAM', 'FINAN_BANCA', 'FINAN_CENTROTRABAJO', 'FINAN_OTROS']",
+            'text': "Distribución de Variables Financieras<br>['FINAN_RECPROPIOS', 'FINAN_APOYOFAM', 'FINAN_BANCA', 'FINAN_CENTROTRABAJO', 'FINAN_OTROS']",
             'y':0.95,
             'x':0.5,
             'xanchor': 'center',
@@ -431,7 +437,7 @@ def crear_grafico_cascada(df):
         yaxis_title='Frecuencia',
         xaxis_tickangle=-90,
         height=600,
-        width=1200,
+        width=1400,
         showlegend=True,
         plot_bgcolor='white',
         xaxis=dict(gridcolor='lightgrey'),
@@ -495,8 +501,9 @@ def entrenar_y_graficar_arbol_decision(df):
         ), row=i, col=1)
 
     fig.update_layout(
-        height=800,
-        title='Comparación de Importancia de Características',
+        height=600,
+        width=1400,
+        #title='Comparación de Importancia de Características',
         showlegend=False
     )
 
@@ -582,7 +589,7 @@ def create_charts(dataset, dataset2):
     # Configurar diseño del gráfico
     fig.update_layout(
         title='Análisis por Distrito, Grado Académico, Universidad y Profesión (Top 5)',
-        height=800,
+        height=600,
         width=1400,
         showlegend=False,
         legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5),
@@ -626,6 +633,8 @@ def create_scatter_plot_study_period(dataset):
     # Personalizar el diseño del gráfico
     fig.update_layout(
         title='Scatter Plot con Color de Puntos por FLG_DESERTION',
+        height=600,
+        width=1400,
         xaxis_title='Edad',
         yaxis_title='Periodo de Estudio',
         showlegend=True,  # Mostrar leyenda
